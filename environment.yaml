@@ -1,0 +1,33 @@
+# A conda environment for ESPIn lessons.
+#
+# Usage:
+#   $ conda env create --file=environment.yaml
+#   $ source activate espin
+
+name: tectonics_env
+channels:
+  - conda-forge
+dependencies:
+  - python =3
+  - numpy	
+  - matplotlib
+  - scipy
+  - scikit-image
+  - scikit-learn
+  - pickle
+  - yaml
+  - rasterio
+  - landlab
+  - pytest
+  - coverage
+  - bmipy
+  - pymt >=1.1
+  - landlab >=2.0
+  - terrainbento
+  - pymt_child
+  - pymt_hydrotrend
+  - pymt_sedflux
+  - bmi-topography
+  - imageio
+  - pip:
+    - tdqm
