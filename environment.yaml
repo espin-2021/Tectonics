@@ -6,7 +6,7 @@
 
 name: tectonics_env
 channels:
-  - default
+  - conda-forge
 dependencies:
   - numpy	
   - matplotlib
