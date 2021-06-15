@@ -42,7 +42,8 @@ from landlab.io import read_esri_ascii
 ###-------------------------------------------------------------------------###
 
 # load parameter configuration from config.yaml file
-config = yaml.load(open('config_files/config.yaml','r')) # use this to run fron config/here
+#config = yaml.load(open('config_files/config.yaml','r')) # use this to run fron config/here
+config = yaml.load(open('config_files/config.yaml','r'),Loader=yaml.FullLoader) # EDITED LINE; The newer version of yaml requires Loader=yaml.FullLoader
 #config = yaml.load(open(sys.argv[1],'r')) # use this line to read file from command line
 #config = yaml.load(open('config.yaml','r')) # EDITED LINE; config.yaml is in the same level as strike_slip_model.py
 
