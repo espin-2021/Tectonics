@@ -141,7 +141,7 @@ n = 1.                  # exponent on slope in stream power equation
 
 ###### SET TECTONICS PARAMS #####################
 # put a strike-slip fault half way up Y axis
-fault_loc = np.int(ymax / 2.)
+fault_loc = int(ymax / 2.) # EDITED LINE; Remove 'np.'
 
 # row of nodes that are main fault trace
 fault_nodes = np.where(grid.node_y==fault_loc)[0]
