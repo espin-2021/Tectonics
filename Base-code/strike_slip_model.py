@@ -33,7 +33,7 @@ from slip import calcSlipRegime, calcOFD, calcCOV # my function for making tecto
 from landlab import RasterModelGrid, imshow_grid # landlab grid components
 from landlab.components import LinearDiffuser, DepressionFinderAndRouter
 #from landlab.components import FlowRouter, FastscapeEroder
-from landlab.components import FlowDirectorSteepest, FastscapeEroder
+from landlab.components import FlowAccumulator, FastscapeEroder
 import pickle as pickle
 from landlab.io import read_esri_ascii 
 
@@ -186,7 +186,7 @@ nshift = np.zeros(nrows,dtype=int)
 ######## INITIALIZE LANDLAB COMPONENTS ##########
 linear_diffuser = LinearDiffuser(grid,linear_diffusivity=kappa) # hillslope diffusion
 #flow_router = FlowRouter(grid) # flow routing # Commented out
-flow_router = FlowDirectorSteepest(grid, 'topographic__elevation') # ADDED LINE; Replaced old FlowRouter component with FlowDirectorSteepest component
+flow_router = FlowAccumulator(grid, flow_director='D8') # ADDED LINE; Replaced old FlowRouter component with FlowDirectorSteepest component
 #depression_finder = DepressionFinderAndRouter(grid) # pit finding and filling...it's slow
 fill = DepressionFinderAndRouter(grid)
 fastscape_eroder = FastscapeEroder(grid,K_sp=K_sp, m_sp=m, n_sp=n, threshold_sp=threshold) # stream power erosion
