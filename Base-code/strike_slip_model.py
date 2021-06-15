@@ -315,23 +315,23 @@ for i in range(iterations):
     if i % plots == 0:
         print('iteration '+str(i),file=open('out_%s.txt' %model_name, 'a'))
     	# save topo to ascii
-        grid.save('topo_%s_yrs_%s.asc' %(np.int((i*dt)+dt),model_name), names=['topographic__elevation'])
+        grid.save('topo_%s_yrs_%s.asc' %(int((i*dt)+dt),model_name), names=['topographic__elevation'])
         # calculate total displacement at one grid cell with the max displacement
         slip_amount = np.round(-displacement[1]*2,1)
         # plot figure of this timestep
         fig = plt.figure(figsize=figsize)
         imshow_grid(grid,z,cmap='terrain',limits=limits,grid_units=['m','m'],shrink=shrink) # eventually update this with hillshade background? gdal not installed in same env right now
-        plt.title('Topography after '+str(np.int((i*dt)+dt))+' years')
+        plt.title('Topography after '+str(int((i*dt)+dt))+' years')
         plt.text(xmax-110,-80, 'total slip: '+str(slip_amount)+' m')
-        plt.savefig('topo_%s_yrs_%s.png' %(np.int((i*dt)+dt),model_name),dpi=300,facecolor=(1,1,1,0))
+        plt.savefig('topo_%s_yrs_%s.png' %(int((i*dt)+dt),model_name),dpi=300,facecolor=(1,1,1,0))
 
 
 # save image for last frame of movie
 fig = plt.figure(figsize=figsize)
 imshow_grid(grid,z,cmap='terrain',limits=limits,grid_units=['m','m'],shrink=shrink)
-plt.title('Topography after '+str(np.int((i*dt)+dt))+' years')
+plt.title('Topography after '+str(int((i*dt)+dt))+' years')
 plt.text(xmax-110,-80, 'total slip: '+str(np.sum(slip_regime))+' m')
-plt.savefig('topo_%s_yrs_%s.png' %(np.int((i*dt)+dt),model_name), dpi=300,facecolor=(1,1,1,0)) # save final topo as image
+plt.savefig('topo_%s_yrs_%s.png' %(int((i*dt)+dt),model_name), dpi=300,facecolor=(1,1,1,0)) # save final topo as image
 
 
 ###### SAVE TOPOGRAPHY ########
