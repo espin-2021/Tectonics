@@ -42,9 +42,9 @@ from landlab.io import read_esri_ascii
 ###-------------------------------------------------------------------------###
 
 # load parameter configuration from config.yaml file
-#config = yaml.load(open('config_files/config.yaml','r')) # use this to run fron config/here
+config = yaml.load(open('config_files/config.yaml','r')) # use this to run fron config/here
 #config = yaml.load(open(sys.argv[1],'r')) # use this line to read file from command line
-config = yaml.load(open('config.yaml','r')) # EDITED LINE; config.yaml is in the same level as strike_slip_model.py
+#config = yaml.load(open('config.yaml','r')) # EDITED LINE; config.yaml is in the same level as strike_slip_model.py
 
 # saving options
 save_pickle = config['saving']['save_pickle'] # save final topography as pickle
