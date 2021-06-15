@@ -95,8 +95,8 @@ plots = config['plotting']['plots'] # how often to save a frame for the movie. 1
 ###-------------------------------------------------------------------------###
 
 ###### INITIALIZE GRID ##########################
-nrows = np.int(ymax/dxy)
-ncols = np.int(xmax/dxy)
+nrows = int(ymax/dxy) # EDITED LINE
+ncols = int(xmax/dxy) # EDITED LINE
 # make a new topo grid - uncomment next line
 #grid = RasterModelGrid((nrows,ncols),dxy) 
 
