@@ -10,7 +10,7 @@ saving frame every 100 timesteps
 
 slip per event is 1.0 meters
 COV is 0.0
---- start time: 2021-06-14 21:04:49 ---
+--- start time: 2021-06-14 21:09:42 ---
 iteration 0
 --- run time: 0.18 minutes ---
---- end time: 2021-06-14 21:05:00 ---
+--- end time: 2021-06-14 21:09:52 ---
